@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Day to day Mongodb Aggregations problem & sollution",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,6 +25,7 @@
   },
   "homepage": "https://github.com/nayanrabiul/mongodb-aggretion-problem#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "mongodb": "^5.1.0"
   }
 }
