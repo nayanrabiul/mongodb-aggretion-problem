@@ -1,4 +1,4 @@
-[
+export const  data = [
   {
     "userId": 123456789,
     "rewards": [
@@ -104,3 +104,7 @@
     ]
   }
 ]
+
+function ISODate(s) {
+  return new Date(s).toISOString();
+}

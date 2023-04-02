@@ -1,5 +1,5 @@
 ### Scenario
-You want to provide a report for your online game **showing the total "coin" rewards** each gaming user has accumulated. 
+You want to provide a report for your online game **showing the total "coin" rewards for each coin type** each gaming user has accumulated. 
 The **challenge** is that the source collection captures each time the game awards a user with a type of coin in a growing array field containing many elements. 
 
 However, for each gamer, you want to show 
@@ -7,9 +7,9 @@ However, for each gamer, you want to show
 *   the total number of coins in each types awarded to the gamer.
 
 #### for example 
-for this
-```js
-{
+for this 
+```js 
+            {
                 "userId": 123456789,
                 "rewards": [
                     {
@@ -37,7 +37,8 @@ for this
                         "amount": 50,
                         "date": ISODate("2022-11-28T19:32:33Z")
                     },
-                ],
+                ]
+            }
             
 ```
 output will be
