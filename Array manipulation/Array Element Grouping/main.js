@@ -1,7 +1,7 @@
 import fs from "fs";
 import MONGO_CONNECT from "../../db_connection.js";
 import {data} from "./input.js";
-import {arrayGroupByCount, arrayGroupBySum} from "../../macro_functions/macro_functions.js";
+import {arrayGroupByCount, arrayGroupBySum} from "../macro_functions.js";
 
 const db = await MONGO_CONNECT();
 

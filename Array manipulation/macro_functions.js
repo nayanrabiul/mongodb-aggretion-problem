@@ -66,3 +66,46 @@ export function arrayGroupBySum(arraySubdocField, groupByKeyField, groupByValueF
         }
     };
 }
+
+
+// Macro function to generate unique keys from two sub-documents returned as an array of the unique keys
+export function getArrayOfTwoSubdocsKeysNoDups(firstArrayRef, secondArrayRef) {
+    return {
+        "$setUnion": {
+            "$concatArrays": [
+                {
+                    "$map": {
+                        "input": {"$objectToArray": firstArrayRef},
+                        "in": "$$this.k",
+                    }
+                },
+                {
+                    "$map": {
+                        "input": {"$objectToArray": secondArrayRef},
+                        "in": "$$this.k",
+                    }
+                },
+            ]
+        }
+    };
+}
+
+// Macro function to get the value of a field of a document where the field's name is only known at runtime
+export function getDynamicField(obj, fieldname) {
+    return {
+        "$first": [
+            {
+                "$map": {
+                    "input": {
+                        "$filter": {
+                            "input": {"$objectToArray": obj},
+                            "as": "currObj",
+                            "cond": {"$eq": ["$$currObj.k", fieldname]}
+                        }
+                    },
+                    "in": "$$this.v"
+                }
+            },
+        ]
+    };
+}

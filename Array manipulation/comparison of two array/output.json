@@ -1,0 +1,46 @@
+[
+  {
+    "name": "ProdServer",
+    "differences": [
+      {
+        "field": "ram",
+        "change": "128 --> 256"
+      },
+      {
+        "field": "vcpus",
+        "change": "8 --> 16"
+      }
+    ],
+    "status": "MODIFIED"
+  },
+  {
+    "name": "QAServer",
+    "differences": [
+      {
+        "field": "extraParams",
+        "change": "<not-set> --> disableTLS;disableCerts;"
+      },
+      {
+        "field": "state",
+        "change": "paused --> running"
+      },
+      {
+        "field": "storage",
+        "change": "512 --> 256"
+      }
+    ],
+    "status": "MODIFIED"
+  },
+  {
+    "name": "LoadTestServer",
+    "status": "REMOVED"
+  },
+  {
+    "name": "IntegrationServer",
+    "status": "UNCHANGED"
+  },
+  {
+    "name": "DevServer",
+    "status": "ADDED"
+  }
+]

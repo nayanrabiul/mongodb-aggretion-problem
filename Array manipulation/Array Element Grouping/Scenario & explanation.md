@@ -7,7 +7,7 @@ However, for each gamer, you want to show
 *   the total number of coins in each types awarded to the gamer.
 
 #### for example 
-for this 
+
 ```js 
             {
                 "userId": 123456789,
