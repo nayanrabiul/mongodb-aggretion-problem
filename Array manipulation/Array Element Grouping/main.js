@@ -26,7 +26,8 @@ async function Main(db) {
     ];
 
     //aggregate
-    const result = await db.collection(COLLECITON_NAME).aggregate(pipeline).toArray();
+    const c = await db.collection(COLLECITON_NAME).aggregate(pipeline)
+    const result = await c.explain("executionStats")
     if (!!result)
         console.log('pipeline executed successfully.Writting data to output.json file ...')
     await fs.writeFileSync("./output.json", JSON.stringify(result));

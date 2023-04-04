@@ -1,79 +1,248 @@
-[
-  {
-    "userId": 123456789,
-    "coinTypeAwardedCounts": [
-      {
-        "id": "bronze",
-        "count": 2
+{
+  "explainVersion": "1",
+  "stages": [
+    {
+      "$cursor": {
+        "queryPlanner": {
+          "namespace": "6423b5ffe1012b7d1a6de0a0_aggretion_test.user_rewards",
+          "indexFilterSet": false,
+          "parsedQuery": {},
+          "queryHash": "8B3D4AB8",
+          "planCacheKey": "D542626C",
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "winningPlan": {
+            "stage": "COLLSCAN",
+            "direction": "forward"
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 3,
+          "executionTimeMillis": 0,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 3,
+          "executionStages": {
+            "stage": "COLLSCAN",
+            "nReturned": 3,
+            "executionTimeMillisEstimate": 0,
+            "works": 5,
+            "advanced": 3,
+            "needTime": 1,
+            "needYield": 0,
+            "saveState": 1,
+            "restoreState": 1,
+            "isEOF": 1,
+            "direction": "forward",
+            "docsExamined": 3
+          }
+        }
       },
-      {
-        "id": "gold",
-        "count": 3
+      "nReturned": 3,
+      "executionTimeMillisEstimate": 0
+    },
+    {
+      "$set": {
+        "coinTypeAwardedCounts": {
+          "$map": {
+            "input": {
+              "$setUnion": [
+                {
+                  "$map": {
+                    "input": "$rewards",
+                    "as": "this",
+                    "in": "$$this.coin"
+                  }
+                }
+              ]
+            },
+            "as": "key",
+            "in": {
+              "id": "$$key",
+              "count": {
+                "$size": [
+                  {
+                    "$filter": {
+                      "input": "$rewards",
+                      "as": "this",
+                      "cond": {
+                        "$eq": [
+                          "$$this.coin",
+                          "$$key"
+                        ]
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "coinTypeTotals": {
+          "$map": {
+            "input": {
+              "$setUnion": [
+                {
+                  "$map": {
+                    "input": "$rewards",
+                    "as": "this",
+                    "in": "$$this.coin"
+                  }
+                }
+              ]
+            },
+            "as": "key",
+            "in": {
+              "id": "$$key",
+              "total": {
+                "$reduce": {
+                  "input": "$rewards",
+                  "initialValue": {
+                    "$const": 0
+                  },
+                  "in": {
+                    "$cond": [
+                      {
+                        "$eq": [
+                          "$$this.coin",
+                          "$$key"
+                        ]
+                      },
+                      {
+                        "$add": [
+                          "$$this.amount",
+                          "$$value"
+                        ]
+                      },
+                      "$$value"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "_id": "$$REMOVE",
+        "rewards": "$$REMOVE"
       },
-      {
-        "id": "silver",
-        "count": 1
-      }
-    ],
-    "coinTypeTotals": [
-      {
-        "id": "bronze",
-        "total": 175
-      },
-      {
-        "id": "gold",
-        "total": 85
-      },
-      {
-        "id": "silver",
-        "total": 50
-      }
-    ]
+      "nReturned": 3,
+      "executionTimeMillisEstimate": 0
+    }
+  ],
+  "serverInfo": {
+    "host": "ac-zbysdgn-shard-00-02.pey91eg.mongodb.net",
+    "port": 27017,
+    "version": "5.0.15",
+    "gitVersion": "935639beed3d0c19c2551c93854b831107c0b118"
   },
-  {
-    "userId": 987654321,
-    "coinTypeAwardedCounts": [
-      {
-        "id": "bronze",
-        "count": 2
-      },
-      {
-        "id": "silver",
-        "count": 3
-      }
-    ],
-    "coinTypeTotals": [
-      {
-        "id": "bronze",
-        "total": 700
-      },
-      {
-        "id": "silver",
-        "total": 150
-      }
-    ]
+  "serverParameters": {
+    "internalQueryFacetBufferSizeBytes": 104857600,
+    "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+    "internalLookupStageIntermediateDocumentMaxSizeBytes": 16793600,
+    "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+    "internalQueryMaxBlockingSortMemoryUsageBytes": 33554432,
+    "internalQueryProhibitBlockingMergeOnMongoS": 0,
+    "internalQueryMaxAddToSetBytes": 104857600,
+    "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600
   },
-  {
-    "userId": 888888888,
-    "coinTypeAwardedCounts": [
+  "command": {
+    "aggregate": "user_rewards",
+    "pipeline": [
       {
-        "id": "gold",
-        "count": 1
-      },
-      {
-        "id": "platinum",
-        "count": 1
+        "$set": {
+          "coinTypeAwardedCounts": {
+            "$map": {
+              "input": {
+                "$setUnion": {
+                  "$map": {
+                    "input": "$rewards",
+                    "in": "$$this.coin"
+                  }
+                }
+              },
+              "as": "key",
+              "in": {
+                "id": "$$key",
+                "count": {
+                  "$size": {
+                    "$filter": {
+                      "input": "$rewards",
+                      "cond": {
+                        "$eq": [
+                          "$$this.coin",
+                          "$$key"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "coinTypeTotals": {
+            "$map": {
+              "input": {
+                "$setUnion": {
+                  "$map": {
+                    "input": "$rewards",
+                    "in": "$$this.coin"
+                  }
+                }
+              },
+              "as": "key",
+              "in": {
+                "id": "$$key",
+                "total": {
+                  "$reduce": {
+                    "input": "$rewards",
+                    "initialValue": 0,
+                    "in": {
+                      "$cond": {
+                        "if": {
+                          "$eq": [
+                            "$$this.coin",
+                            "$$key"
+                          ]
+                        },
+                        "then": {
+                          "$add": [
+                            "$$this.amount",
+                            "$$value"
+                          ]
+                        },
+                        "else": "$$value"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "_id": "$$REMOVE",
+          "rewards": "$$REMOVE"
+        }
       }
     ],
-    "coinTypeTotals": [
-      {
-        "id": "gold",
-        "total": 500
-      },
-      {
-        "id": "platinum",
-        "total": 5
+    "cursor": {},
+    "$db": "aggretion_test"
+  },
+  "ok": 1,
+  "$clusterTime": {
+    "clusterTime": {
+      "$timestamp": "7218107649517158409"
+    },
+    "signature": {
+      "hash": "Lubzp+ITDgOq07x9UcWOZ0wcVEc=",
+      "keyId": {
+        "low": 6,
+        "high": 1667886485,
+        "unsigned": false
       }
-    ]
+    }
+  },
+  "operationTime": {
+    "$timestamp": "7218107649517158409"
   }
-]
+}
