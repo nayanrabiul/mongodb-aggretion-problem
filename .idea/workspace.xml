@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="53fbfef8-b627-43e9-bb43-4faee51a2743" name="Changes" comment="p">
+      <change afterPath="$PROJECT_DIR$/ch1 Essential Knowledge/expressions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch1 Essential Knowledge/Pipeline Optimization and Explain Plan.md" beforeDir="false" afterPath="$PROJECT_DIR$/ch1 Essential Knowledge/Pipeline Optimization and Explain Plan.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ch1 Essential Knowledge/WhatIsAggregationPipeline.md" beforeDir="false" afterPath="$PROJECT_DIR$/ch1 Essential Knowledge/WhatIsAggregationPipeline.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/db_connection.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2NidDz5nkoHfwYXzHZYq8Owlr74" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RESTKit.sync.cert.Ide&quot;: &quot;true&quot;,
+    &quot;RESTKit.sync.env.Ide&quot;: &quot;true&quot;,
+    &quot;RESTKit.sync.requestConfig.Ide&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.15.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.15.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nayan/WebstormProjects/mongodb-aggretion-problem/Array manipulation&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Array manipulation" />
+      <recent name="$PROJECT_DIR$/Array manipulation/Array Element Grouping" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Array manipulation" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="53fbfef8-b627-43e9-bb43-4faee51a2743" name="Changes" comment="" />
+      <created>1680150721085</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680150721085</updated>
+      <workItem from="1680150722259" duration="8332000" />
+      <workItem from="1680160060133" duration="648000" />
+      <workItem from="1680337313660" duration="7243000" />
+      <workItem from="1680409948854" duration="2076000" />
+      <workItem from="1680414042236" duration="14810000" />
+      <workItem from="1680493335993" duration="4055000" />
+      <workItem from="1680580071747" duration="8925000" />
+      <workItem from="1680666026428" duration="1061000" />
+      <workItem from="1680682532817" duration="3797000" />
+      <workItem from="1680751621963" duration="69000" />
+      <workItem from="1680751695120" duration="7978000" />
+    </task>
+    <task id="LOCAL-00001" summary="initial commit">
+      <created>1680151962662</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680151962662</updated>
+    </task>
+    <task id="LOCAL-00002" summary="adding git ignore">
+      <created>1680152018231</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680152018231</updated>
+    </task>
+    <task id="LOCAL-00003" summary="grouping array element added">
+      <created>1680157868932</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680157868932</updated>
+    </task>
+    <task id="LOCAL-00004" summary="array grouping problem redefined">
+      <created>1680163676010</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680163676010</updated>
+    </task>
+    <task id="LOCAL-00005" summary="array grouping">
+      <created>1680410560521</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680410560521</updated>
+    </task>
+    <task id="LOCAL-00006" summary="array grouping">
+      <created>1680509428371</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680509428371</updated>
+    </task>
+    <task id="LOCAL-00007" summary="left work: Pipeline Optimization and Explain Plan.md">
+      <created>1680597917931</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680597917931</updated>
+    </task>
+    <task id="LOCAL-00008" summary="p">
+      <created>1680690144424</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680690144424</updated>
+    </task>
+    <task id="LOCAL-00009" summary="p">
+      <created>1680751736776</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680751736776</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="initial commit" />
+    <MESSAGE value="adding git ignore" />
+    <MESSAGE value="grouping array element added" />
+    <MESSAGE value="array grouping problem redefined" />
+    <MESSAGE value="array grouping" />
+    <MESSAGE value="left work: Pipeline Optimization and Explain Plan.md" />
+    <MESSAGE value="p" />
+    <option name="LAST_COMMIT_MESSAGE" value="p" />
+  </component>
+</project>
