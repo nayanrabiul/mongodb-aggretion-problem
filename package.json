@@ -1,0 +1,30 @@
+{
+  "name": "mongodb-aggretion-problem",
+  "version": "1.0.0",
+  "description": "Day to day Mongodb Aggregations problem & sollution",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nayanrabiul/mongodb-aggretion-problem.git"
+  },
+  "keywords": [
+    "mongodb",
+    "aggregation",
+    "pipeline",
+    "problems"
+  ],
+  "author": "Rabiul Hasan Nayan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nayanrabiul/mongodb-aggretion-problem/issues"
+  },
+  "homepage": "https://github.com/nayanrabiul/mongodb-aggretion-problem#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "mongodb": "^5.1.0"
+  }
+}
