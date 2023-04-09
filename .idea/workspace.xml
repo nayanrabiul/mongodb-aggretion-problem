@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53fbfef8-b627-43e9-bb43-4faee51a2743" name="Changes" comment="expressions.md">
-      <change afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/If-Else Conditional Comparison.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/introduction.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/map and reduce - The Power operator.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ch1 Essential Knowledge/shreading.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="53fbfef8-b627-43e9-bb43-4faee51a2743" name="Changes" comment="advance array operation">
+      <change beforePath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/map and reduce - The Power operator.md" beforeDir="false" afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/map and reduce - The Power operator.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,27 +33,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RESTKit.sync.cert.Ide": "true",
-    "RESTKit.sync.env.Ide": "true",
-    "RESTKit.sync.requestConfig.Ide": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "javascript.nodejs.core.library.configured.version": "18.15.0",
-    "javascript.nodejs.core.library.typings.version": "18.15.0",
-    "last_opened_file_path": "/home/nayan/Pictures/four-agg-split-merge-patterns.png",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RESTKit.sync.cert.Ide&quot;: &quot;true&quot;,
+    &quot;RESTKit.sync.env.Ide&quot;: &quot;true&quot;,
+    &quot;RESTKit.sync.requestConfig.Ide&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.15.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.15.0&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/nayan/Pictures/four-agg-split-merge-patterns.png&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Array manipulation" />
@@ -88,6 +84,7 @@
       <workItem from="1680751621963" duration="69000" />
       <workItem from="1680751695120" duration="7996000" />
       <workItem from="1680924489605" duration="12553000" />
+      <workItem from="1681026770167" duration="327000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1680151962662</created>
@@ -159,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680776963124</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="advance array operation">
+      <created>1681026829541</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681026829541</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +202,7 @@
     <MESSAGE value="left work: Pipeline Optimization and Explain Plan.md" />
     <MESSAGE value="p" />
     <MESSAGE value="expressions.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="expressions.md" />
+    <MESSAGE value="advance array operation" />
+    <option name="LAST_COMMIT_MESSAGE" value="advance array operation" />
   </component>
 </project>
