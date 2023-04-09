@@ -1,0 +1,43 @@
+Even though performing conditional comparisons is more of a general principle than specific to array manipulation, it is first worth touching upon it to introduce the topic of advanced expressions.
+Consider the trivialised scenario of a retailer wanting to calculate the total cost of a customer’s shopping order. 
+The customer might order multiple of the same product, and the vendor applies a discount if more than 5 of the product items are in the order.
+
+In a procedural style of JavaScript, you might write the following code to calculate the total order cost:
+
+```js
+//define order
+let order = {"product": "WizzyWidget", "price": 25.99, "qty": 8};
+
+// Procedural style JavaScript
+if (order.qty > 5) {
+    order.cost = order.price * order.qty * 0.9;
+} else {
+    order.cost = order.price * order.qty;
+}
+const output = {product: 'WizzyWidget', qty: 8, price: 25.99, cost: 187.128}
+
+//To achieve a similar outcome in an aggregation pipeline, you might use the following:
+db.customer_orders.insertOne(order);
+var pipeline = [
+    {"$set": {
+            "cost": {
+                "$cond": {
+                    "if":   {"$gte": ["$qty", 5]},
+                    "then": {"$multiply": ["$price", "$qty", 0.9]},
+                    "else": {"$multiply": ["$price", "$qty"]},
+                }
+            },
+        }},
+];
+db.customer_orders.aggregate(pipeline);
+const output = {product: 'WizzyWidget', price: 25.99, qty: 8, cost: 187.128}
+```
+
+Here, you can see that the JavaScript code's construction in a functional style more closely resembles the aggregation pipeline's structure. 
+This comparison highlights why some people may find composing aggregation expressions foreboding. 
+The challenge is predominantly due to the less familiar paradigm of functional programming rather than the intricacies of MongoDB's aggregation language per se.
+The pipeline will work unchanged when run against a collection of many records, which could feasibly be many billions.
+The sample JavaScript code only works against one document at a time and would need to be modified to loop through a list of records. 
+This JavaScript code would need to fetch each document from the database back to a client, apply the modifications and then write the result back to the database. 
+Instead, the aggregation pipeline’s logic operates against each document in-situ within the database for far superior performance and efficiency.
+
