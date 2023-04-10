@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53fbfef8-b627-43e9-bb43-4faee51a2743" name="Changes" comment="advance array operation">
+    <list default="true" id="53fbfef8-b627-43e9-bb43-4faee51a2743" name="Changes" comment="saving change">
+      <change afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/map with reduce.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/map and reduce - The Power operator.md" beforeDir="false" afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/map and reduce - The Power operator.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_connection.js" beforeDir="false" afterPath="$PROJECT_DIR$/db_connection.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +87,8 @@
       <workItem from="1680751621963" duration="69000" />
       <workItem from="1680751695120" duration="7996000" />
       <workItem from="1680924489605" duration="12553000" />
-      <workItem from="1681026770167" duration="327000" />
+      <workItem from="1681026770167" duration="645000" />
+      <workItem from="1681098125078" duration="3007000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1680151962662</created>
@@ -163,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681026829541</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="saving change">
+      <created>1681027410322</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681027410322</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +214,7 @@
     <MESSAGE value="p" />
     <MESSAGE value="expressions.md" />
     <MESSAGE value="advance array operation" />
-    <option name="LAST_COMMIT_MESSAGE" value="advance array operation" />
+    <MESSAGE value="saving change" />
+    <option name="LAST_COMMIT_MESSAGE" value="saving change" />
   </component>
 </project>
