@@ -1,0 +1,189 @@
+One of the primary uses of the $map operator expression is to add more data to each existing object in an array. 
+Suppose you've persisted a set of retail orders, where each order document contains an array of order items. 
+Each order item in the array captures the product’s name, unit price, and quantity purchased, as shown in the example below:
+
+```js
+//input
+db.orders.insertOne({
+    "custid": "jdoe@acme.com",
+    "items": [
+        {
+        "product" : "WizzyWidget",
+        "unitPrice": 25.99,
+        "qty": 8,
+        },
+        {
+        "product" : "HighEndGizmo",
+        "unitPrice": 33.24,
+        "qty": 3,
+        }
+    ]
+});
+
+//You now need to calculate the total cost for each product item (quantity x unitPrice) and add that cost to the corresponding order item in the array. 
+//You can use a pipeline similar to the following to achieve this:
+
+//output
+{
+    custid: 'jdoe@acme.com',
+        items: [
+    {
+        product: 'WizzyWidget',
+        unitPrice: 25.99,
+        qty: 8,
+        cost: 187.128
+    },
+    {
+        product: 'HighEndGizmo',
+        unitPrice: 33.24,
+        qty: 3,
+        cost: 99.72
+    }
+]
+}
+
+//pipeline
+var pipeline = [
+    {"$set": {
+            "items": {
+                "$map": {
+                    "input": "$items",
+                    "as": "item",
+                    "in": {
+                        "product": "$$item.product",
+                        "unitPrice": "$$item.unitPrice",
+                        "qty": "$$item.qty",
+                        "cost": {"$multiply": ["$$item.unitPrice", "$$item.qty"]}},
+                }
+            }
+        }
+    }
+];
+db.orders.aggregate(pipeline);
+```
+
+
+Here, for each element in the source array, the pipeline creates an element in the new array by explicitly pulling in the three fields from the old element (product, unitPrice and quantity) 
+and adding one new computed field (cost). The pipeline produces the following output:
+
+
+### better solution
+Similar to the disadvantages of using a $project stage in a pipeline, outlined in an earlier chapter, the $map code is burdened by explicitly naming every field in the array element to retain. 
+You will find this tiresome if each array element has lots of fields. In addition, if your data model evolves and new types of fields appear in the array's items over time, you will be forced to return to your 
+pipeline and refactor it each time to include these newly introduced fields.
+
+Just like using $set instead of $project for a pipeline stage, there is a better solution to allow you to retain all existing array item fields and add new ones when you process arrays. 
+A good solution is to employ the $mergeObjects operator expression to combine all existing fields plus the newly computed fields into each new array element. 
+
+$mergeObjects takes an array of objects and combines the fields from all the array's objects into one single object. 
+To use $mergeObjects in this situation, you provide the current array element as the first parameter to $mergeObjects. The second parameter you provide is a new object containing each computed field.
+In the example below, the code adds only one generated field, but if you require it, you can include multiple generated fields in this new object:
+
+```js
+var pipeline = [
+    {"$set": {
+            "items": {
+                "$map": {
+                    "input": "$items",
+                    "as": "item",
+                    "in": {
+                        "$mergeObjects": [
+                            "$$item",
+                            {"cost": {"$multiply": ["$$item.unitPrice", "$$item.qty"]}},
+                        ]
+                    }
+                }
+            }
+        }}
+];
+db.orders.aggregate(pipeline);
+```
+
+This pipeline produces the same output as the previous "hardcoded field names" pipeline, but with the advantage of being sympathetic to new types of fields appearing in the source array in the future.
+
+
+
+Instead of using $mergeObjects, there is an alternative and slightly more verbose combination of three different array operator expressions that you can similarly employ to retain all existing array item fields and 
+add new ones. These three operators are:
+
+1. $objectToArray. This converts an object containing different field key/value pairs into an array of objects where each object has two fields: k, holding the field's name, and v, holding the field's value. For example: {height: 170, weight: 60} becomes [{k: 'height', v: 170}, {k: 'weight', v: 60}]
+2. $concatArrays. This combines the contents of multiple arrays into one single array result.
+3. $arrayToObject. This converts an array into an object by performing the reverse of the $objectToArray operator. 
+For example: {k: 'height', v: 170}, {k: 'weight', v: 60}, {k: 'shoeSize', v: 10}] becomes {height: 170, weight: 60, shoeSize: 10}
+The pipeline below shows the combination in action for the same retail orders data set as before, adding the newly computed total cost for each product:
+
+```js
+var pipeline = [
+    {"$set": {
+            "items": {
+                "$map": {
+                    "input": "$items",
+                    "as": "item",
+                    "in": {
+                        "$arrayToObject": {
+                            "$concatArrays": [
+                                {"$objectToArray": "$$item"},
+                                [{"k": "cost", "v": {"$multiply": ["$$item.unitPrice", "$$item.qty"]}}]
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+];
+db.orders.aggregate(pipeline);
+```
+
+
+### why bother using this pattern?
+Well, in most cases, you wouldn't. One situation where you would use the more verbose combination is if you need to dynamically set the name of an array item's field, in addition to its value. 
+Rather than naming the computed total field as cost, suppose you want the field's name also to reflect the product's name (e.g. costForWizzyWidget, costForHighEndGizmo). 
+You can achieve this by using the $arrayToObject/$concatArrays/$objectToArray approach rather than the $mergeObjects method, as follows:
+```js
+var  pipeline = [
+    {"$set": {
+            "items": {
+                "$map": {
+                    "input": "$items",
+                    "as": "item",
+                    "in": {
+                        "$arrayToObject": {
+                            "$concatArrays": [
+                                {"$objectToArray": "$$item"},
+                                [{"k": {"$concat": ["costFor", "$$item.product"]}, "v": {"$multiply": ["$$item.unitPrice", "$$item.qty"]}}]
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+];
+db.orders.aggregate(pipeline);
+
+const output = {
+    custid: 'jdoe@acme.com',
+    items: [
+        {
+            product: 'WizzyWidget',
+            unitPrice: 25.99,
+            qty: 8,
+            costForWizzyWidget: 207.92
+        },
+        {
+            product: 'HighEndGizmo',
+            unitPrice: 33.24,
+            qty: 3,
+            costForHighEndGizmo: 99.72
+        }
+    ]
+}
+
+```
+you can see the new pipeline's output. The pipeline has retained all existing array item's fields and added a new field to each item with a dynamically generated name.
+When retaining existing items from an array, plus adding new fields, you can use either approach to override an existing item's field with a new value. 
+For example, you may want to modify the current unitPrice field to incorporate a discount. 
+For both $mergeObjects and $arrayToObject expressions, to achieve this, you provide a re-definition of the field as a subsequent parameter after first providing the reference to the source array item. 
+This tactic works because the last definition wins if the same field is defined more than once with different values.
+
