@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53fbfef8-b627-43e9-bb43-4faee51a2743" name="Changes" comment="push">
-      <change afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/Adding New Fields To Existing Objects In An Array.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/3.map and reduce - The Power operator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/4.&quot;For-Each&quot; Looping To Locate An Array Element.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/4.&quot;For-Each&quot; Looping To Locate An Array Element.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/7.Rudimentary Schema Reflection Using Arrays.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/map with reduce.md" beforeDir="false" afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/Reproducing $map Behaviour Using $reduce.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/Adding New Fields To Existing Objects In An Array.md" beforeDir="false" afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/5.Adding New Fields To Existing Objects In An Array.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/If-Else Conditional Comparison.md" beforeDir="false" afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/2.If-Else Conditional Comparison.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/Reproducing $map Behaviour Using $reduce.md" beforeDir="false" afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/6.Reproducing $map Behaviour Using $reduce.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/introduction.md" beforeDir="false" afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/1.introduction.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/map and reduce - The Power operator.md" beforeDir="false" afterPath="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing/3.map and reduce - The Power operator.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,32 +39,34 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RESTKit.sync.cert.Ide&quot;: &quot;true&quot;,
-    &quot;RESTKit.sync.env.Ide&quot;: &quot;true&quot;,
-    &quot;RESTKit.sync.requestConfig.Ide&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.15.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.15.0&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/nayan/Pictures/four-agg-split-merge-patterns.png&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RESTKit.sync.cert.Ide": "true",
+    "RESTKit.sync.env.Ide": "true",
+    "RESTKit.sync.requestConfig.Ide": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "javascript.nodejs.core.library.configured.version": "18.15.0",
+    "javascript.nodejs.core.library.typings.version": "18.15.0",
+    "last_opened_file_path": "/home/nayan/WebstormProjects/mongodb-aggretion-problem/Array manipulation problems/Expressions For Array Processing",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Array manipulation problems/Expressions For Array Processing" />
       <recent name="$PROJECT_DIR$/Array manipulation" />
       <recent name="$PROJECT_DIR$/Array manipulation/Array Element Grouping" />
     </key>
@@ -89,7 +98,13 @@
       <workItem from="1681026770167" duration="645000" />
       <workItem from="1681098125078" duration="3007000" />
       <workItem from="1681105507683" duration="75000" />
-      <workItem from="1681273732835" duration="2219000" />
+      <workItem from="1681273732835" duration="2825000" />
+      <workItem from="1681357591171" duration="1582000" />
+      <workItem from="1681361752723" duration="599000" />
+      <workItem from="1681549779587" duration="2482000" />
+      <workItem from="1681615104183" duration="65000" />
+      <workItem from="1681615180003" duration="3546000" />
+      <workItem from="1681621821144" duration="5853000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1680151962662</created>
@@ -182,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681105518158</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="push">
+      <created>1681276937393</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681276937393</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
