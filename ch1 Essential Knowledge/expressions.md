@@ -4,7 +4,15 @@ Proficiency in aggregation pipelines demands a deeper understanding of expressio
 Aggregation expressions come in one of three primary flavours:
 
 1. **Operators** .$ prefix followed by the operator function name as the main key for the object.  Examples: {$sort: ...}, {$cond: ...}, {$dateToString: ...}
-2. **Field** Paths. Accessed as a string with a $ prefix followed by the field's path **in each record being processed**.  Examples: "$account.sortcode", "$addresses.address.city"
+2. **Field** Paths. Accessed as a string with a $ prefix followed by the field's path **in each record being processed**.  Examples: "$account.sortcode", "$addresses.address.city".
+   but when using match does not use $ .
+   {
+      $match: {
+         "products.price": {
+         $gt: 15
+         }
+      }
+   }
 3. **Variables**. Accessed as a string with a $$ prefix followed by the fixed name and falling into three sub-categories:
    1. Context System Variables. With values coming from the system environment rather than each input record an aggregation stage is processing.  Examples: "$$NOW", "$$CLUSTER_TIME"
    2. Marker Flag System Variables. To indicate desired behaviour to pass back to the aggregation runtime.  Examples:  "$$REMOVE", "$$ROOT", "$$PRUNE"

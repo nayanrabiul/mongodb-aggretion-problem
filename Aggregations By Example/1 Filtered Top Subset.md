@@ -1,0 +1,166 @@
+# Scenario
+You want to query a collection of people to find the three youngest people who have a job in engineering, sorted by the
+youngest person first.
+
+## Sample Data Population
+
+```js
+db.persons.insertMany(
+    [
+        {
+            "person_id": "6392529400",
+            "firstname": "Elise",
+            "lastname": "Smith",
+            "dateofbirth": ISODate("1972-01-13T09:32:07Z"),
+            "vocation": "ENGINEER",
+            "address": {
+                "number": 5625,
+                "street": "Tipa Circle",
+                "city": "Wojzinmoj",
+            },
+        },
+        {
+            "person_id": "1723338115",
+            "firstname": "Olive",
+            "lastname": "Ranieri",
+            "dateofbirth": ISODate("1985-05-12T23:14:30Z"),
+            "gender": "FEMALE",
+            "vocation": "ENGINEER",
+            "address": {
+                "number": 9303,
+                "street": "Mele Circle",
+                "city": "Tobihbo",
+            },
+        },
+        {
+            "person_id": "8732762874",
+            "firstname": "Toni",
+            "lastname": "Jones",
+            "dateofbirth": ISODate("1991-11-23T16:53:56Z"),
+            "vocation": "POLITICIAN",
+            "address": {
+                "number": 1,
+                "street": "High Street",
+                "city": "Upper Abbeywoodington",
+            },
+        },
+        {
+            "person_id": "7363629563",
+            "firstname": "Bert",
+            "lastname": "Gooding",
+            "dateofbirth": ISODate("1941-04-07T22:11:52Z"),
+            "vocation": "FLORIST",
+            "address": {
+                "number": 13,
+                "street": "Upper Bold Road",
+                "city": "Redringtonville",
+            },
+        },
+        {
+            "person_id": "1029648329",
+            "firstname": "Sophie",
+            "lastname": "Celements",
+            "dateofbirth": ISODate("1959-07-06T17:35:45Z"),
+            "vocation": "ENGINEER",
+            "address": {
+                "number": 5,
+                "street": "Innings Close",
+                "city": "Basilbridge",
+            },
+        },
+        {
+            "person_id": "7363626383",
+            "firstname": "Carl",
+            "lastname": "Simmons",
+            "dateofbirth": ISODate("1998-12-26T13:13:55Z"),
+            "vocation": "ENGINEER",
+            "address": {
+                "number": 187,
+                "street": "Hillside Road",
+                "city": "Kenningford",
+            },
+        },
+    ]
+);
+
+
+var pipeline = [
+// Match engineers only
+    {
+        "$match": {
+            "vocation": "ENGINEER",
+        }
+    },
+
+// Sort by youngest person first
+    {
+        "$sort": {
+            "dateofbirth": -1,
+        }
+    },
+
+// Only include the first 3 youngest people
+    {"$limit": 3},
+
+// Exclude unrequired fields from each person record
+    {
+        "$unset": [
+            "_id",
+            "vocation",
+            "address",
+        ]
+    },
+];
+```
+
+Execution
+Execute the aggregation using the defined pipeline and also view its explain plan:
+
+db.persons.aggregate(pipeline);
+
+db.persons.explain("executionStats").aggregate(pipeline);
+Expected Results
+Three documents should be returned, representing the three youngest people who are engineers (ordered by youngest
+first), omitting the _id or address attributes of each person, as shown below:
+
+```js
+[
+    {
+        person_id: '7363626383',
+        firstname: 'Carl',
+        lastname: 'Simmons',
+        dateofbirth: ISODate('1998-12-26T13:13:55.000Z')
+    },
+    {
+        person_id: '1723338115',
+        firstname: 'Olive',
+        lastname: 'Ranieri',
+        dateofbirth: ISODate('1985-05-12T23:14:30.000Z'),
+        gender: 'FEMALE'
+    },
+    {
+        person_id: '6392529400',
+        firstname: 'Elise',
+        lastname: 'Smith',
+        dateofbirth: ISODate('1972-01-13T09:32:07.000Z')
+    }
+]
+```
+
+## Observations
+
+Index Use. A basic aggregation pipeline, where if many records belong to the collection, a compound index for vocation +
+dateofbirth should exist to enable the database to
+fully optimise the execution of the pipeline combining the filter of the $match stage with the sort from the sort stage
+and the limit of the limit stage.
+
+Unset Use. An $unset stage is used rather than a $project stage. This enables the pipeline to avoid being verbose.
+More importantly, it means the pipeline does not have to be modified if a new field appears in documents added in the
+future
+(for example, see the gender field that appears in only Olive's record).
+
+MQL Similarity. For reference, the MQL equivalent for you to achieve the same result is shown below
+
+```js
+db.persons.find({"vocation": "ENGINEER"}, {"_id": 0, "vocation": 0, "address": 0},).sort({"dateofbirth": -1}).limit(3);
+```
