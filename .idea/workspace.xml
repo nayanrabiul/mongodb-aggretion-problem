@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53fbfef8-b627-43e9-bb43-4faee51a2743" name="Changes" comment="p">
-      <change afterPath="$PROJECT_DIR$/Aggregations By Example/1 Filtered Top Subset.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aggregations By Example/2 Group &amp; Total.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aggregations By Example/2 Group &amp; Total.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aggregations By Example/3 Unpack Arrays &amp; Group Differently.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aggregations By Example/3 Unpack Arrays &amp; Group Differently.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aggregations By Example/4 Distinct List Of Values.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Aggregations By Example/4 Distinct List Of Values.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Array manipulation problems/pagination/facetbased_pagination.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib.js" afterDir="false" />
+    <list default="true" id="53fbfef8-b627-43e9-bb43-4faee51a2743" name="Changes" comment="updating">
+      <change afterPath="$PROJECT_DIR$/pagination/manual vs pipeline way.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ch1 Essential Knowledge/expressions.md" beforeDir="false" afterPath="$PROJECT_DIR$/ch1 Essential Knowledge/expressions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Array manipulation problems/pagination/facetbased_pagination.md" beforeDir="false" afterPath="$PROJECT_DIR$/pagination/facetbased_pagination.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +66,8 @@
       <recent name="$PROJECT_DIR$/Array manipulation/Array Element Grouping" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Array manipulation" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Array manipulation" />
     </key>
   </component>
   <component name="RunManager" selected="Node.js.4 Distinct List Of Values.js">
@@ -131,6 +123,8 @@
       <workItem from="1682738199055" duration="615000" />
       <workItem from="1682739291951" duration="4252000" />
       <workItem from="1682744224481" duration="2787000" />
+      <workItem from="1682917671008" duration="98000" />
+      <workItem from="1682918163748" duration="2292000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1680151962662</created>
@@ -244,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681900464308</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="updating">
+      <created>1682917687486</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1682917687486</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +288,7 @@
     <MESSAGE value="push" />
     <MESSAGE value="5" />
     <MESSAGE value="p" />
-    <option name="LAST_COMMIT_MESSAGE" value="p" />
+    <MESSAGE value="updating" />
+    <option name="LAST_COMMIT_MESSAGE" value="updating" />
   </component>
 </project>

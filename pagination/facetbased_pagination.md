@@ -1,3 +1,6 @@
+```js
+
+
 export const getSubscribedUsers = async (req, res) => {
 const {query} = req;
 const page = query.page ? query.page : 1;
@@ -74,3 +77,6 @@ const skip = Number((page - 1) * size)
         })
     }
 }
+
+
+```
