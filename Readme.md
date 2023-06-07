@@ -1,5 +1,5 @@
 # Introduuction
-This repository contains a collection of MongoDB aggregation problems. The problems are divided into different levels of difficulty, from beginner to advanced. Each problem has a corresponding solution, which is provided in the form of a MongoDB aggregation pipeline.
+This repository contains a collection of MongoDB aggregation problems. The problems are divided intotypes. Each problem has a corresponding solution, which is provided in the form of a MongoDB aggregation pipeline.
 
 The purpose of this repository is to provide a resource for learning about MongoDB aggregation. The problems are designed to challenge and stretch your understanding of aggregation. The solutions can be used as a reference when you are working on your own MongoDB aggregation problems.
 
