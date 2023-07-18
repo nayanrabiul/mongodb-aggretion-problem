@@ -20,6 +20,9 @@ const skip = Number((page - 1) * size)
     try {
         let users = await MarketingUser.aggregate([
             {
+                $match: matchStage
+            },
+            {
                 $match: searchStage
             },
             {
