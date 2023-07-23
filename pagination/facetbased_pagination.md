@@ -18,7 +18,7 @@ const skip = Number((page - 1) * size)
     } : {}
 
     try {
-        let users = await MarketingUser.aggregate([
+        let data = await MarketingUser.aggregate([
             {
                 $match: matchStage
             },
@@ -70,7 +70,7 @@ const skip = Number((page - 1) * size)
         return res.status(200).send({
             error: false,
             msg: "Fetch Successful",
-            data: users[0]
+            data: data[0]
         })
     } catch (err) {
         console.log(err.message);
