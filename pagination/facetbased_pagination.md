@@ -4,7 +4,7 @@
 export const getSubscribedUsers = async (req, res) => {
 const {query} = req;
 const page = query.page ? query.page : 1;
-const size = Number(query.size ? query.size : (2 ** 53 - 1)); //max size for each page, (2 ** 53 - 1) means get all users
+const size = Number(query.size ? query.size : 50); //get 50 or max size for each page, (2 ** 53 - 1) means get all users
 const skip = Number((page - 1) * size)
 
     //define match stage
